@@ -1,0 +1,322 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BECCFC2A15D7047700FF1FBC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECCFC2915D7047700FF1FBC /* UIKit.framework */; };
+		BECCFC2C15D7047700FF1FBC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECCFC2B15D7047700FF1FBC /* Foundation.framework */; };
+		BECCFC2E15D7047700FF1FBC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECCFC2D15D7047700FF1FBC /* CoreGraphics.framework */; };
+		BECCFC3415D7047700FF1FBC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BECCFC3215D7047700FF1FBC /* InfoPlist.strings */; };
+		BECCFC3615D7047700FF1FBC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BECCFC3515D7047700FF1FBC /* main.m */; };
+		BECCFC3A15D7047700FF1FBC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BECCFC3915D7047700FF1FBC /* AppDelegate.m */; };
+		BECCFC3D15D7047700FF1FBC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BECCFC3C15D7047700FF1FBC /* ViewController.m */; };
+		BECCFC4015D7047700FF1FBC /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BECCFC3E15D7047700FF1FBC /* ViewController_iPhone.xib */; };
+		BECCFC4315D7047700FF1FBC /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BECCFC4115D7047700FF1FBC /* ViewController_iPad.xib */; };
+		BECCFC4E15D7058500FF1FBC /* omghelp-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BECCFC4A15D7058500FF1FBC /* omghelp-icon.png */; };
+		BECCFC4F15D7058500FF1FBC /* omghelp-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BECCFC4B15D7058500FF1FBC /* omghelp-icon@2x.png */; };
+		BECCFC5015D7058500FF1FBC /* omghelp-splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = BECCFC4C15D7058500FF1FBC /* omghelp-splashscreen.png */; };
+		BECCFC5115D7058500FF1FBC /* omghelp-splashscren@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BECCFC4D15D7058500FF1FBC /* omghelp-splashscren@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BECCFC2515D7047700FF1FBC /* omgHelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = omgHelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BECCFC2915D7047700FF1FBC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BECCFC2B15D7047700FF1FBC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BECCFC2D15D7047700FF1FBC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BECCFC3115D7047700FF1FBC /* omgHelp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "omgHelp-Info.plist"; sourceTree = "<group>"; };
+		BECCFC3315D7047700FF1FBC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BECCFC3515D7047700FF1FBC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BECCFC3715D7047700FF1FBC /* omgHelp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "omgHelp-Prefix.pch"; sourceTree = "<group>"; };
+		BECCFC3815D7047700FF1FBC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BECCFC3915D7047700FF1FBC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BECCFC3B15D7047700FF1FBC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BECCFC3C15D7047700FF1FBC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BECCFC3F15D7047700FF1FBC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
+		BECCFC4215D7047700FF1FBC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		BECCFC4A15D7058500FF1FBC /* omghelp-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "omghelp-icon.png"; sourceTree = "<group>"; };
+		BECCFC4B15D7058500FF1FBC /* omghelp-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "omghelp-icon@2x.png"; sourceTree = "<group>"; };
+		BECCFC4C15D7058500FF1FBC /* omghelp-splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "omghelp-splashscreen.png"; sourceTree = "<group>"; };
+		BECCFC4D15D7058500FF1FBC /* omghelp-splashscren@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "omghelp-splashscren@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BECCFC2215D7047700FF1FBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BECCFC2A15D7047700FF1FBC /* UIKit.framework in Frameworks */,
+				BECCFC2C15D7047700FF1FBC /* Foundation.framework in Frameworks */,
+				BECCFC2E15D7047700FF1FBC /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BECCFC1A15D7047700FF1FBC = {
+			isa = PBXGroup;
+			children = (
+				BECCFC2F15D7047700FF1FBC /* omgHelp */,
+				BECCFC2815D7047700FF1FBC /* Frameworks */,
+				BECCFC2615D7047700FF1FBC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BECCFC2615D7047700FF1FBC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BECCFC2515D7047700FF1FBC /* omgHelp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BECCFC2815D7047700FF1FBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BECCFC2915D7047700FF1FBC /* UIKit.framework */,
+				BECCFC2B15D7047700FF1FBC /* Foundation.framework */,
+				BECCFC2D15D7047700FF1FBC /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BECCFC2F15D7047700FF1FBC /* omgHelp */ = {
+			isa = PBXGroup;
+			children = (
+				BECCFC3815D7047700FF1FBC /* AppDelegate.h */,
+				BECCFC3915D7047700FF1FBC /* AppDelegate.m */,
+				BECCFC3B15D7047700FF1FBC /* ViewController.h */,
+				BECCFC3C15D7047700FF1FBC /* ViewController.m */,
+				BECCFC3E15D7047700FF1FBC /* ViewController_iPhone.xib */,
+				BECCFC4115D7047700FF1FBC /* ViewController_iPad.xib */,
+				BECCFC4915D7052800FF1FBC /* Resources */,
+				BECCFC3015D7047700FF1FBC /* Supporting Files */,
+			);
+			path = omgHelp;
+			sourceTree = "<group>";
+		};
+		BECCFC3015D7047700FF1FBC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BECCFC3115D7047700FF1FBC /* omgHelp-Info.plist */,
+				BECCFC3215D7047700FF1FBC /* InfoPlist.strings */,
+				BECCFC3515D7047700FF1FBC /* main.m */,
+				BECCFC3715D7047700FF1FBC /* omgHelp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BECCFC4915D7052800FF1FBC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BECCFC4A15D7058500FF1FBC /* omghelp-icon.png */,
+				BECCFC4B15D7058500FF1FBC /* omghelp-icon@2x.png */,
+				BECCFC4C15D7058500FF1FBC /* omghelp-splashscreen.png */,
+				BECCFC4D15D7058500FF1FBC /* omghelp-splashscren@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BECCFC2415D7047700FF1FBC /* omgHelp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BECCFC4615D7047700FF1FBC /* Build configuration list for PBXNativeTarget "omgHelp" */;
+			buildPhases = (
+				BECCFC2115D7047700FF1FBC /* Sources */,
+				BECCFC2215D7047700FF1FBC /* Frameworks */,
+				BECCFC2315D7047700FF1FBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = omgHelp;
+			productName = omgHelp;
+			productReference = BECCFC2515D7047700FF1FBC /* omgHelp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BECCFC1C15D7047700FF1FBC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "VSee Lab, Inc";
+			};
+			buildConfigurationList = BECCFC1F15D7047700FF1FBC /* Build configuration list for PBXProject "omgHelp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BECCFC1A15D7047700FF1FBC;
+			productRefGroup = BECCFC2615D7047700FF1FBC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BECCFC2415D7047700FF1FBC /* omgHelp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BECCFC2315D7047700FF1FBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BECCFC3415D7047700FF1FBC /* InfoPlist.strings in Resources */,
+				BECCFC4015D7047700FF1FBC /* ViewController_iPhone.xib in Resources */,
+				BECCFC4315D7047700FF1FBC /* ViewController_iPad.xib in Resources */,
+				BECCFC4E15D7058500FF1FBC /* omghelp-icon.png in Resources */,
+				BECCFC4F15D7058500FF1FBC /* omghelp-icon@2x.png in Resources */,
+				BECCFC5015D7058500FF1FBC /* omghelp-splashscreen.png in Resources */,
+				BECCFC5115D7058500FF1FBC /* omghelp-splashscren@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BECCFC2115D7047700FF1FBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BECCFC3615D7047700FF1FBC /* main.m in Sources */,
+				BECCFC3A15D7047700FF1FBC /* AppDelegate.m in Sources */,
+				BECCFC3D15D7047700FF1FBC /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BECCFC3215D7047700FF1FBC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BECCFC3315D7047700FF1FBC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BECCFC3E15D7047700FF1FBC /* ViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BECCFC3F15D7047700FF1FBC /* en */,
+			);
+			name = ViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		BECCFC4115D7047700FF1FBC /* ViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BECCFC4215D7047700FF1FBC /* en */,
+			);
+			name = ViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BECCFC4415D7047700FF1FBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BECCFC4515D7047700FF1FBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BECCFC4715D7047700FF1FBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "omgHelp/omgHelp-Prefix.pch";
+				INFOPLIST_FILE = "omgHelp/omgHelp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BECCFC4815D7047700FF1FBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "omgHelp/omgHelp-Prefix.pch";
+				INFOPLIST_FILE = "omgHelp/omgHelp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BECCFC1F15D7047700FF1FBC /* Build configuration list for PBXProject "omgHelp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BECCFC4415D7047700FF1FBC /* Debug */,
+				BECCFC4515D7047700FF1FBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BECCFC4615D7047700FF1FBC /* Build configuration list for PBXNativeTarget "omgHelp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BECCFC4715D7047700FF1FBC /* Debug */,
+				BECCFC4815D7047700FF1FBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BECCFC1C15D7047700FF1FBC /* Project object */;
+}
