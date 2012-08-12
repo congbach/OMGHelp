@@ -9,6 +9,7 @@
 #import "CategoriesViewController.h"
 #import "CallViewController.h"
 #import "AppDelegate.h"
+#import "OMGDebugger.h"
 
 @interface CategoriesViewController ()
 
@@ -105,7 +106,7 @@
     }
     else
     {
-        CallViewController *callViewController = [[[CallViewController alloc] initWithCategoryId:[[categoryJSON valueForKeyPath:@"Category.id"] intValue]] autorelease];
+        CallViewController *callViewController = [[[CallViewController alloc] initWithCategoryId:[[categoryJSON valueForKeyPath:@"Category.id"] intValue] categoryName:[categoryJSON valueForKeyPath:@"Category.name"]] autorelease];
         callViewController.navigationItem.hidesBackButton = YES;
         callViewController.title = [categoryJSON valueForKeyPath:@"Category.name"];
         [[[AppDelegate sharedAppDelegate] navigationController] pushViewController:callViewController animated:YES];

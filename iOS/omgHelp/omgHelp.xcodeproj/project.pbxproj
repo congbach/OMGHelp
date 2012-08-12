@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE1A5FDD15D7DEE100F1BC0C /* NSData+Base64Decoding.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1A5FDC15D7DEE100F1BC0C /* NSData+Base64Decoding.m */; };
 		BE3C4FFD15D75E87001426F4 /* Opentok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C4FFC15D75E86001426F4 /* Opentok.framework */; };
 		BE3C500015D75E9A001426F4 /* opentok.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE3C4FFF15D75E9A001426F4 /* opentok.bundle */; };
 		BE3C503315D768E8001426F4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C503215D768E8001426F4 /* AudioToolbox.framework */; };
@@ -59,6 +60,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE1A5FDB15D7DEE100F1BC0C /* NSData+Base64Decoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64Decoding.h"; sourceTree = "<group>"; };
+		BE1A5FDC15D7DEE100F1BC0C /* NSData+Base64Decoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64Decoding.m"; sourceTree = "<group>"; };
 		BE3C4FFC15D75E86001426F4 /* Opentok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Opentok.framework; sourceTree = "<group>"; };
 		BE3C4FFF15D75E9A001426F4 /* opentok.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = opentok.bundle; sourceTree = "<group>"; };
 		BE3C503215D768E8001426F4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -216,6 +219,8 @@
 				BECCFC5615D70A8300FF1FBC /* Libraries */,
 				BECCFC4915D7052800FF1FBC /* Resources */,
 				BECCFC3015D7047700FF1FBC /* Supporting Files */,
+				BE1A5FDB15D7DEE100F1BC0C /* NSData+Base64Decoding.h */,
+				BE1A5FDC15D7DEE100F1BC0C /* NSData+Base64Decoding.m */,
 			);
 			path = omgHelp;
 			sourceTree = "<group>";
@@ -416,6 +421,7 @@
 				BECCFC9915D7190600FF1FBC /* OMGDebugger.m in Sources */,
 				BECCFCA115D7268F00FF1FBC /* CategoriesViewController.m in Sources */,
 				BEB33CB415D7388D00FF67A3 /* CallViewController.m in Sources */,
+				BE1A5FDD15D7DEE100F1BC0C /* NSData+Base64Decoding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

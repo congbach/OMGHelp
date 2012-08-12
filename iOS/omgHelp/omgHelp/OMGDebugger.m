@@ -19,22 +19,23 @@ static OMGDebugger *_sharedDebugger;
     return _sharedDebugger;
 }
 
-- (void)log:(NSString *)msg
+- (void)log:(id)msg
 {
 #if BUILD_RELEASE
     NSLog(@"%@", msg);
 #elif BUILD_DEBUG
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log"
-                                                    message:msg
+                                                    message:[NSString stringWithFormat:@"%@", msg]
                                                    delegate:self
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     [alert show];
+    //[alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
     [alert release];
 #endif
 }
 
-- (void)logError:(NSString *)msg
+- (void)logError:(id)msg
 {
     [self log:msg];
 }
