@@ -9,6 +9,8 @@
 #import "HomeViewController.h"
 #import "NetworkManager.h"
 #import "JSONKit.h"
+#import "AppDelegate.h"
+#import "CategoriesViewController.h"
 
 @interface HomeViewController ()
 
@@ -50,6 +52,11 @@
 - (void)displayCategoriesFromJSON:(id)JSON
 {
     [self.activityIndicator stopAnimating];
+    CategoriesViewController *categoriesViewController = [[[CategoriesViewController alloc] initWithJSONCategoriesArray:[JSON valueForKeyPath:@"MenuCategories"]] autorelease];
+    categoriesViewController.title = @"omgHelp";
+    categoriesViewController.navigationItem.hidesBackButton = YES;
+    [[[AppDelegate sharedAppDelegate] navigationController] pushViewController:categoriesViewController animated:NO];
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

@@ -34,6 +34,9 @@
 		BECCFC9115D70D3C00FF1FBC /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BECCFC8E15D70D3C00FF1FBC /* ViewController_iPad.xib */; };
 		BECCFC9215D70D3C00FF1FBC /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BECCFC8F15D70D3C00FF1FBC /* ViewController_iPhone.xib */; };
 		BECCFC9915D7190600FF1FBC /* OMGDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = BECCFC9815D7190500FF1FBC /* OMGDebugger.m */; };
+		BECCFCA115D7268F00FF1FBC /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BECCFC9F15D7268E00FF1FBC /* CategoriesViewController.m */; };
+		BECCFCA415D726BA00FF1FBC /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BECCFCA315D726BA00FF1FBC /* CategoriesViewController.xib */; };
+		BECCFCA615D72A3200FF1FBC /* NavigationTitleLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = BECCFCA515D72A3200FF1FBC /* NavigationTitleLogo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +86,10 @@
 		BECCFC8F15D70D3C00FF1FBC /* ViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController_iPhone.xib; sourceTree = "<group>"; };
 		BECCFC9715D7190500FF1FBC /* OMGDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMGDebugger.h; sourceTree = "<group>"; };
 		BECCFC9815D7190500FF1FBC /* OMGDebugger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMGDebugger.m; sourceTree = "<group>"; };
+		BECCFC9E15D7268E00FF1FBC /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
+		BECCFC9F15D7268E00FF1FBC /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
+		BECCFCA315D726BA00FF1FBC /* CategoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriesViewController.xib; sourceTree = "<group>"; };
+		BECCFCA515D72A3200FF1FBC /* NavigationTitleLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavigationTitleLogo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +164,7 @@
 		BECCFC4915D7052800FF1FBC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BECCFCA515D72A3200FF1FBC /* NavigationTitleLogo.png */,
 				BECCFC4A15D7058500FF1FBC /* omghelp-icon.png */,
 				BECCFC4B15D7058500FF1FBC /* omghelp-icon@2x.png */,
 				BECCFC4C15D7058500FF1FBC /* omghelp-splashscreen.png */,
@@ -223,6 +231,8 @@
 		BECCFC8315D70B7A00FF1FBC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BECCFC9E15D7268E00FF1FBC /* CategoriesViewController.h */,
+				BECCFC9F15D7268E00FF1FBC /* CategoriesViewController.m */,
 				BECCFC8815D70CF300FF1FBC /* HomeViewController.h */,
 				BECCFC8915D70CF300FF1FBC /* HomeViewController.m */,
 			);
@@ -232,6 +242,7 @@
 		BECCFC8415D70B9200FF1FBC /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				BECCFCA315D726BA00FF1FBC /* CategoriesViewController.xib */,
 				BECCFC8D15D70D3C00FF1FBC /* HomeViewController.xib */,
 				BECCFC8E15D70D3C00FF1FBC /* ViewController_iPad.xib */,
 				BECCFC8F15D70D3C00FF1FBC /* ViewController_iPhone.xib */,
@@ -298,6 +309,8 @@
 				BECCFC9015D70D3C00FF1FBC /* HomeViewController.xib in Resources */,
 				BECCFC9115D70D3C00FF1FBC /* ViewController_iPad.xib in Resources */,
 				BECCFC9215D70D3C00FF1FBC /* ViewController_iPhone.xib in Resources */,
+				BECCFCA415D726BA00FF1FBC /* CategoriesViewController.xib in Resources */,
+				BECCFCA615D72A3200FF1FBC /* NavigationTitleLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +337,7 @@
 				BECCFC8215D70B6F00FF1FBC /* NetworkManager.m in Sources */,
 				BECCFC8B15D70CF300FF1FBC /* HomeViewController.m in Sources */,
 				BECCFC9915D7190600FF1FBC /* OMGDebugger.m in Sources */,
+				BECCFCA115D7268F00FF1FBC /* CategoriesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

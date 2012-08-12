@@ -40,7 +40,7 @@ static NetworkManager *_sharedNetworkManager;
 
 - (void)requestCategoriesWithCallBackTarget:(id)target selector:(SEL)selector
 {
-    NSURL *url = [NSURL URLWithString:@"http://www.omghelp.net/conversation-sample.txt"];
+    NSURL *url = [NSURL URLWithString:@"http://www.omghelp.net/categories-sample.txt"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
