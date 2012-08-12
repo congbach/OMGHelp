@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UINavigationController *navigationController;
+@property (nonatomic) BOOL instructionsShown;
 
 + (AppDelegate *)sharedAppDelegate;
 

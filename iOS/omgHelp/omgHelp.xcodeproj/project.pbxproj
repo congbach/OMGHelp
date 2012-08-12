@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE1A5FDD15D7DEE100F1BC0C /* NSData+Base64Decoding.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1A5FDC15D7DEE100F1BC0C /* NSData+Base64Decoding.m */; };
 		6D05E93115D7EF2600001332 /* entry-screen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D05E92F15D7EF2600001332 /* entry-screen@2x.png */; };
-		6D05E93515D7EFCA00001332 /* omghelp-splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D05E93415D7EFCA00001332 /* omghelp-splashscreen.png */; };
+		6D05E93715D7F0CD00001332 /* omghelp-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D05E93615D7F0CD00001332 /* omghelp-icon@2x.png */; };
+		6D05E93915D7F41000001332 /* omghelp-splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D05E93415D7EFCA00001332 /* omghelp-splashscreen.png */; };
+		6D05E94115D801B600001332 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D05E93F15D801B600001332 /* IntroViewController.m */; };
+		6D05E94215D801B600001332 /* IntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D05E94015D801B600001332 /* IntroViewController.xib */; };
+		6D05E94515D8029400001332 /* introduction-screen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D05E94415D8029400001332 /* introduction-screen@2x.png */; };
+		6D05E94815D805D900001332 /* nav-bar-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D05E94615D805D900001332 /* nav-bar-image.png */; };
+		6D05E94915D805D900001332 /* nav-bar-image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D05E94715D805D900001332 /* nav-bar-image@2x.png */; };
+		6D05E94B15D8092A00001332 /* nav-bar-image-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D05E94A15D8092A00001332 /* nav-bar-image-2@2x.png */; };
+		6D05E94E15D80BF400001332 /* hang-up-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D05E94C15D80BF400001332 /* hang-up-icon.png */; };
+		6D05E94F15D80BF400001332 /* hang-up-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D05E94D15D80BF400001332 /* hang-up-icon@2x.png */; };
+		BE1A5FDD15D7DEE100F1BC0C /* NSData+Base64Decoding.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1A5FDC15D7DEE100F1BC0C /* NSData+Base64Decoding.m */; };
 		BE3C4FFD15D75E87001426F4 /* Opentok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C4FFC15D75E86001426F4 /* Opentok.framework */; };
 		BE3C500015D75E9A001426F4 /* opentok.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE3C4FFF15D75E9A001426F4 /* opentok.bundle */; };
 		BE3C503315D768E8001426F4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C503215D768E8001426F4 /* AudioToolbox.framework */; };
@@ -36,8 +45,6 @@
 		BECCFC3615D7047700FF1FBC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BECCFC3515D7047700FF1FBC /* main.m */; };
 		BECCFC3A15D7047700FF1FBC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BECCFC3915D7047700FF1FBC /* AppDelegate.m */; };
 		BECCFC4E15D7058500FF1FBC /* omghelp-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BECCFC4A15D7058500FF1FBC /* omghelp-icon.png */; };
-		BECCFC5015D7058500FF1FBC /* omghelp-splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = BECCFC4C15D7058500FF1FBC /* omghelp-splashscreen.png */; };
-		BECCFC5115D7058500FF1FBC /* omghelp-splashscren@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BECCFC4D15D7058500FF1FBC /* omghelp-splashscren@2x.png */; };
 		BECCFC6D15D70AAC00FF1FBC /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BECCFC5915D70AAC00FF1FBC /* AFHTTPClient.m */; };
 		BECCFC6E15D70AAC00FF1FBC /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BECCFC5B15D70AAC00FF1FBC /* AFHTTPRequestOperation.m */; };
 		BECCFC6F15D70AAC00FF1FBC /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BECCFC5D15D70AAC00FF1FBC /* AFImageRequestOperation.m */; };
@@ -61,10 +68,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BE1A5FDB15D7DEE100F1BC0C /* NSData+Base64Decoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64Decoding.h"; sourceTree = "<group>"; };
-		BE1A5FDC15D7DEE100F1BC0C /* NSData+Base64Decoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64Decoding.m"; sourceTree = "<group>"; };
 		6D05E92F15D7EF2600001332 /* entry-screen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "entry-screen@2x.png"; sourceTree = "<group>"; };
 		6D05E93415D7EFCA00001332 /* omghelp-splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "omghelp-splashscreen.png"; sourceTree = "<group>"; };
+		6D05E93615D7F0CD00001332 /* omghelp-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "omghelp-icon@2x.png"; sourceTree = "<group>"; };
+		6D05E93E15D801B600001332 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
+		6D05E93F15D801B600001332 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
+		6D05E94015D801B600001332 /* IntroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IntroViewController.xib; path = ../Controllers/IntroViewController.xib; sourceTree = "<group>"; };
+		6D05E94415D8029400001332 /* introduction-screen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "introduction-screen@2x.png"; sourceTree = "<group>"; };
+		6D05E94615D805D900001332 /* nav-bar-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-bar-image.png"; sourceTree = "<group>"; };
+		6D05E94715D805D900001332 /* nav-bar-image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-bar-image@2x.png"; sourceTree = "<group>"; };
+		6D05E94A15D8092A00001332 /* nav-bar-image-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-bar-image-2@2x.png"; sourceTree = "<group>"; };
+		6D05E94C15D80BF400001332 /* hang-up-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hang-up-icon.png"; sourceTree = "<group>"; };
+		6D05E94D15D80BF400001332 /* hang-up-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hang-up-icon@2x.png"; sourceTree = "<group>"; };
+		BE1A5FDB15D7DEE100F1BC0C /* NSData+Base64Decoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64Decoding.h"; sourceTree = "<group>"; };
+		BE1A5FDC15D7DEE100F1BC0C /* NSData+Base64Decoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64Decoding.m"; sourceTree = "<group>"; };
 		BE3C4FFC15D75E86001426F4 /* Opentok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Opentok.framework; sourceTree = "<group>"; };
 		BE3C4FFF15D75E9A001426F4 /* opentok.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = opentok.bundle; sourceTree = "<group>"; };
 		BE3C503215D768E8001426F4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -96,8 +113,6 @@
 		BECCFC3815D7047700FF1FBC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BECCFC3915D7047700FF1FBC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BECCFC4A15D7058500FF1FBC /* omghelp-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "omghelp-icon.png"; sourceTree = "<group>"; };
-		BECCFC4C15D7058500FF1FBC /* omghelp-splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "omghelp-splashscreen.png"; sourceTree = "<group>"; };
-		BECCFC4D15D7058500FF1FBC /* omghelp-splashscren@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "omghelp-splashscren@2x.png"; sourceTree = "<group>"; };
 		BECCFC5815D70AAC00FF1FBC /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		BECCFC5915D70AAC00FF1FBC /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		BECCFC5A15D70AAC00FF1FBC /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -168,6 +183,7 @@
 		BECCFC1A15D7047700FF1FBC = {
 			isa = PBXGroup;
 			children = (
+				6D05E93615D7F0CD00001332 /* omghelp-icon@2x.png */,
 				6D05E93415D7EFCA00001332 /* omghelp-splashscreen.png */,
 				BECCFC2F15D7047700FF1FBC /* omgHelp */,
 				BECCFC2815D7047700FF1FBC /* Frameworks */,
@@ -242,12 +258,16 @@
 		BECCFC4915D7052800FF1FBC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6D05E94615D805D900001332 /* nav-bar-image.png */,
+				6D05E94A15D8092A00001332 /* nav-bar-image-2@2x.png */,
+				6D05E94715D805D900001332 /* nav-bar-image@2x.png */,
+				6D05E94415D8029400001332 /* introduction-screen@2x.png */,
 				6D05E92F15D7EF2600001332 /* entry-screen@2x.png */,
+				6D05E94C15D80BF400001332 /* hang-up-icon.png */,
+				6D05E94D15D80BF400001332 /* hang-up-icon@2x.png */,
 				BEB33CB915D7426900FF67A3 /* end-call.png */,
 				BECCFCA515D72A3200FF1FBC /* NavigationTitleLogo.png */,
 				BECCFC4A15D7058500FF1FBC /* omghelp-icon.png */,
-				BECCFC4C15D7058500FF1FBC /* omghelp-splashscreen.png */,
-				BECCFC4D15D7058500FF1FBC /* omghelp-splashscren@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -314,6 +334,8 @@
 				BECCFC9F15D7268E00FF1FBC /* CategoriesViewController.m */,
 				BECCFC8815D70CF300FF1FBC /* HomeViewController.h */,
 				BECCFC8915D70CF300FF1FBC /* HomeViewController.m */,
+				6D05E93E15D801B600001332 /* IntroViewController.h */,
+				6D05E93F15D801B600001332 /* IntroViewController.m */,
 				BEB33CB115D7388D00FF67A3 /* CallViewController.h */,
 				BEB33CB215D7388D00FF67A3 /* CallViewController.m */,
 			);
@@ -327,6 +349,7 @@
 				BECCFCA315D726BA00FF1FBC /* CategoriesViewController.xib */,
 				BECCFC8D15D70D3C00FF1FBC /* HomeViewController.xib */,
 				BECCFC8E15D70D3C00FF1FBC /* ViewController_iPad.xib */,
+				6D05E94015D801B600001332 /* IntroViewController.xib */,
 				BECCFC8F15D70D3C00FF1FBC /* ViewController_iPhone.xib */,
 			);
 			path = Nibs;
@@ -385,8 +408,6 @@
 			files = (
 				BECCFC3415D7047700FF1FBC /* InfoPlist.strings in Resources */,
 				BECCFC4E15D7058500FF1FBC /* omghelp-icon.png in Resources */,
-				BECCFC5015D7058500FF1FBC /* omghelp-splashscreen.png in Resources */,
-				BECCFC5115D7058500FF1FBC /* omghelp-splashscren@2x.png in Resources */,
 				BECCFC9015D70D3C00FF1FBC /* HomeViewController.xib in Resources */,
 				BECCFC9115D70D3C00FF1FBC /* ViewController_iPad.xib in Resources */,
 				BECCFC9215D70D3C00FF1FBC /* ViewController_iPhone.xib in Resources */,
@@ -396,7 +417,15 @@
 				BEB33CBA15D7426900FF67A3 /* end-call.png in Resources */,
 				BE3C500015D75E9A001426F4 /* opentok.bundle in Resources */,
 				6D05E93115D7EF2600001332 /* entry-screen@2x.png in Resources */,
-				6D05E93515D7EFCA00001332 /* omghelp-splashscreen.png in Resources */,
+				6D05E93715D7F0CD00001332 /* omghelp-icon@2x.png in Resources */,
+				6D05E93915D7F41000001332 /* omghelp-splashscreen.png in Resources */,
+				6D05E94215D801B600001332 /* IntroViewController.xib in Resources */,
+				6D05E94515D8029400001332 /* introduction-screen@2x.png in Resources */,
+				6D05E94815D805D900001332 /* nav-bar-image.png in Resources */,
+				6D05E94915D805D900001332 /* nav-bar-image@2x.png in Resources */,
+				6D05E94B15D8092A00001332 /* nav-bar-image-2@2x.png in Resources */,
+				6D05E94E15D80BF400001332 /* hang-up-icon.png in Resources */,
+				6D05E94F15D80BF400001332 /* hang-up-icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +455,7 @@
 				BECCFCA115D7268F00FF1FBC /* CategoriesViewController.m in Sources */,
 				BEB33CB415D7388D00FF67A3 /* CallViewController.m in Sources */,
 				BE1A5FDD15D7DEE100F1BC0C /* NSData+Base64Decoding.m in Sources */,
+				6D05E94115D801B600001332 /* IntroViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

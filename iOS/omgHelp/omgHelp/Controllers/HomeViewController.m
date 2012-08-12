@@ -68,8 +68,17 @@
 - (void)displayCategoriesFromJSON:(id)JSON
 {
     [self.activityIndicator stopAnimating];
+    IntroViewController *intro = [[IntroViewController alloc] init];
+    
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    if (!delegate.instructionsShown) {
+      delegate.instructionsShown = YES;
+      [self.navigationController presentModalViewController:intro animated:NO];
+    }
+    
     CategoriesViewController *categoriesViewController = [[[CategoriesViewController alloc] initWithJSONCategoriesArray:[JSON valueForKeyPath:@"MenuCategories"]] autorelease];
-    categoriesViewController.title = @"omgHelp";
+//    categoriesViewController.navigationItem.titleView = [[UIView alloc] initWithFrame:CGRectZero];  
+    categoriesViewController.title = @"omg.HELP";
     categoriesViewController.navigationItem.hidesBackButton = YES;
     [[[AppDelegate sharedAppDelegate] navigationController] pushViewController:categoriesViewController animated:NO];
     
