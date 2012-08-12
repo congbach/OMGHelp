@@ -211,6 +211,10 @@ static NSString *const kApiKey = @"17077042";
                                                {
                                                    [self.overlayImageView performSelectorOnMainThread:@selector(setImage:) withObject:[UIImage imageWithData:[NSData base64DataFromString:overlayData]] waitUntilDone:NO];
                                                }
+                                               else
+                                               {
+                                                   [self.overlayImageView setImage:nil];
+                                               }
                                            }
                                            failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
                                                [[OMGDebugger sharedDebugger] logError:error];
@@ -221,6 +225,8 @@ static NSString *const kApiKey = @"17077042";
             NSString *overlayData = [imageJSON valueForKeyPath:@"Overlay"];
             if (overlayData && (NSNull *)overlayData != [NSNull null] && [overlayData length])
                 [self.overlayImageView performSelectorOnMainThread:@selector(setImage:) withObject:[UIImage imageWithData:[NSData base64DataFromString:overlayData]] waitUntilDone:NO];
+            else
+                [self.overlayImageView setImage:nil];
         }
     }
     else
