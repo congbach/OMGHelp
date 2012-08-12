@@ -13,6 +13,7 @@
 
 @synthesize window = _window;
 @synthesize navigationController = _navigationController;
+@synthesize instructionsShown;
 
 static AppDelegate *_sharedAppDelegate = nil;
 
