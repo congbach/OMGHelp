@@ -104,17 +104,6 @@ static NSString *const kApiKey = @"17077042";
     // hack to get correct video ration
     [[UIDevice currentDevice] performSelector:NSSelectorFromString(@"setOrientation:") withObject:(id)UIInterfaceOrientationLandscapeRight];
     
-    CGRect frame = self.overlayView.frame;
-    CGFloat x = frame.origin.x + frame.size.width / 2;
-    CGFloat y = frame.origin.y + frame.size.height / 2;
-    CGAffineTransform transform = CGAffineTransformMakeTranslation(-x, -y);
-    transform = CGAffineTransformRotate(transform, -M_PI / 2);
-    transform = CGAffineTransformTranslate(transform, x, y);
-    self.overlayView.transform = transform;
-    frame = self.overlayView.frame;
-    frame.origin.y += 320;
-    self.overlayView.frame = frame;
-    
     [self.categoryLabel setText:self.categoryName];
     [self.helperNameLabel setText:@"Waiting for support…"];
     [self.activityIndicator startAnimating];
