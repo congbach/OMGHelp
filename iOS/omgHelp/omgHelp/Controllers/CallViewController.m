@@ -166,6 +166,8 @@ static NSString *const kApiKey = @"17077042";
     if (helperName && (NSNull *)helperName != [NSNull null])
         [self.helperNameLabel setText:helperName];
     
+    //self.overlayImageView.hidden = YES;
+    
 #if !(TARGET_IPHONE_SIMULATOR)
     [self doConnect];
 #else
@@ -182,6 +184,12 @@ static NSString *const kApiKey = @"17077042";
     NSString *helperName = [JSON valueForKeyPath:@"Conversation.HelperName"];
     if (helperName && (NSNull *)helperName != [NSNull null])
         [self.helperNameLabel setText:helperName];
+    
+    if ([[JSON valueForKeyPath:@"Conversation.Completed"] boolValue])
+    {
+        [self endCall:nil];
+        return;
+    }
     
     id imageJSON = [JSON valueForKeyPath:@"Conversation.Image"];
     if ([[imageJSON valueForKeyPath:@"Enabled"] boolValue])
@@ -209,18 +217,18 @@ static NSString *const kApiKey = @"17077042";
                                                NSString *overlayData = [imageJSON valueForKeyPath:@"Overlay"];
                                                if (overlayData && (NSNull *)overlayData != [NSNull null] && [overlayData length])
                                                {
-                                                   [self.overlayImageView setImage:[UIImage imageWithData:[NSData base64DataFromString:overlayData]]];
+                                                   [self.overlayImageView performSelectorOnMainThread:@selector(setImage:) withObject:[UIImage imageWithData:[NSData base64DataFromString:overlayData]] waitUntilDone:NO];
                                                }
                                            }
-                                           failure:nil];
+                                           failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+                                               [[OMGDebugger sharedDebugger] logError:error];
+                                           }];
         }
         else
         {
             NSString *overlayData = [imageJSON valueForKeyPath:@"Overlay"];
             if (overlayData && (NSNull *)overlayData != [NSNull null] && [overlayData length])
-            {
-                [self.overlayImageView setImage:[UIImage imageWithData:[NSData base64DataFromString:overlayData]]];
-            }
+                [self.overlayImageView performSelectorOnMainThread:@selector(setImage:) withObject:[UIImage imageWithData:[NSData base64DataFromString:overlayData]] waitUntilDone:NO];
         }
     }
     else
@@ -330,7 +338,12 @@ static NSString *const kApiKey = @"17077042";
     NSLog(@"- hasAudio %@", (stream.hasAudio ? @"YES" : @"NO"));
     NSLog(@"- hasVideo %@", (stream.hasVideo ? @"YES" : @"NO"));
     
-    //_opentokSubscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
+    if (!_opentokSubscriber && ![stream.connection.connectionId isEqualToString: _opentokSession.connection.connectionId])
+    {
+        _opentokSubscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
+        _opentokSubscriber.subscribeToVideo = NO;
+        _opentokSubscriber.subscribeToAudio = YES;
+    }
 }
 
 - (void)session:(OTSession*)session didDropStream:(OTStream*)stream

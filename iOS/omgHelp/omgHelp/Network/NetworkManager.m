@@ -112,6 +112,7 @@ static NetworkManager *_sharedNetworkManager;
     }];
     
     [operation start];
+    [operation waitUntilFinished];
 }
 
 @end
