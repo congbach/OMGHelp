@@ -104,17 +104,6 @@ static NSString *const kApiKey = @"17077042";
     // hack to get correct video ration
     [[UIDevice currentDevice] performSelector:NSSelectorFromString(@"setOrientation:") withObject:(id)UIInterfaceOrientationLandscapeRight];
     
-    CGRect frame = self.overlayView.frame;
-    CGFloat x = frame.origin.x + frame.size.width / 2;
-    CGFloat y = frame.origin.y + frame.size.height / 2;
-    CGAffineTransform transform = CGAffineTransformMakeTranslation(-x, -y);
-    transform = CGAffineTransformRotate(transform, -M_PI / 2);
-    transform = CGAffineTransformTranslate(transform, x, y);
-    self.overlayView.transform = transform;
-    frame = self.overlayView.frame;
-    frame.origin.y += 320;
-    self.overlayView.frame = frame;
-    
     [self.categoryLabel setText:self.categoryName];
     [self.helperNameLabel setText:@"Waiting for support…"];
     [self.activityIndicator startAnimating];
@@ -181,6 +170,9 @@ static NSString *const kApiKey = @"17077042";
 {
     self.JSON = JSON;
     
+    @synchronized(self)
+    {
+    
     NSString *helperName = [JSON valueForKeyPath:@"Conversation.HelperName"];
     if (helperName && (NSNull *)helperName != [NSNull null])
         [self.helperNameLabel setText:helperName];
@@ -236,6 +228,9 @@ static NSString *const kApiKey = @"17077042";
         self.imageView.hidden = YES;
         self.opentokPublisher.view.hidden = NO;
     }
+        
+        
+    }
 }
 
 
@@ -289,7 +284,7 @@ static NSString *const kApiKey = @"17077042";
     [self.activityIndicator stopAnimating];
     self.activityIndicator.hidden = YES;
     
-    self.pullRequestTimer = [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(pullCallInfo:) userInfo:nil repeats:YES];
+    self.pullRequestTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(pullCallInfo:) userInfo:nil repeats:YES];
     [self.pullRequestTimer fire];
 }
 
@@ -340,6 +335,7 @@ static NSString *const kApiKey = @"17077042";
     
     if (!_opentokSubscriber && ![stream.connection.connectionId isEqualToString: _opentokSession.connection.connectionId])
     {
+        [[OMGDebugger sharedDebugger] log:@"Received stream"];
         _opentokSubscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
         _opentokSubscriber.subscribeToVideo = NO;
         _opentokSubscriber.subscribeToAudio = YES;
