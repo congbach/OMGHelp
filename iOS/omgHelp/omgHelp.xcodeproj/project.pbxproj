@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BE1A5FDD15D7DEE100F1BC0C /* NSData+Base64Decoding.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1A5FDC15D7DEE100F1BC0C /* NSData+Base64Decoding.m */; };
+		6D05E93115D7EF2600001332 /* entry-screen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D05E92F15D7EF2600001332 /* entry-screen@2x.png */; };
+		6D05E93515D7EFCA00001332 /* omghelp-splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D05E93415D7EFCA00001332 /* omghelp-splashscreen.png */; };
 		BE3C4FFD15D75E87001426F4 /* Opentok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C4FFC15D75E86001426F4 /* Opentok.framework */; };
 		BE3C500015D75E9A001426F4 /* opentok.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE3C4FFF15D75E9A001426F4 /* opentok.bundle */; };
 		BE3C503315D768E8001426F4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C503215D768E8001426F4 /* AudioToolbox.framework */; };
@@ -34,7 +36,6 @@
 		BECCFC3615D7047700FF1FBC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BECCFC3515D7047700FF1FBC /* main.m */; };
 		BECCFC3A15D7047700FF1FBC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BECCFC3915D7047700FF1FBC /* AppDelegate.m */; };
 		BECCFC4E15D7058500FF1FBC /* omghelp-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BECCFC4A15D7058500FF1FBC /* omghelp-icon.png */; };
-		BECCFC4F15D7058500FF1FBC /* omghelp-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BECCFC4B15D7058500FF1FBC /* omghelp-icon@2x.png */; };
 		BECCFC5015D7058500FF1FBC /* omghelp-splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = BECCFC4C15D7058500FF1FBC /* omghelp-splashscreen.png */; };
 		BECCFC5115D7058500FF1FBC /* omghelp-splashscren@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BECCFC4D15D7058500FF1FBC /* omghelp-splashscren@2x.png */; };
 		BECCFC6D15D70AAC00FF1FBC /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BECCFC5915D70AAC00FF1FBC /* AFHTTPClient.m */; };
@@ -62,6 +63,8 @@
 /* Begin PBXFileReference section */
 		BE1A5FDB15D7DEE100F1BC0C /* NSData+Base64Decoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64Decoding.h"; sourceTree = "<group>"; };
 		BE1A5FDC15D7DEE100F1BC0C /* NSData+Base64Decoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64Decoding.m"; sourceTree = "<group>"; };
+		6D05E92F15D7EF2600001332 /* entry-screen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "entry-screen@2x.png"; sourceTree = "<group>"; };
+		6D05E93415D7EFCA00001332 /* omghelp-splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "omghelp-splashscreen.png"; sourceTree = "<group>"; };
 		BE3C4FFC15D75E86001426F4 /* Opentok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Opentok.framework; sourceTree = "<group>"; };
 		BE3C4FFF15D75E9A001426F4 /* opentok.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = opentok.bundle; sourceTree = "<group>"; };
 		BE3C503215D768E8001426F4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -93,7 +96,6 @@
 		BECCFC3815D7047700FF1FBC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BECCFC3915D7047700FF1FBC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BECCFC4A15D7058500FF1FBC /* omghelp-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "omghelp-icon.png"; sourceTree = "<group>"; };
-		BECCFC4B15D7058500FF1FBC /* omghelp-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "omghelp-icon@2x.png"; sourceTree = "<group>"; };
 		BECCFC4C15D7058500FF1FBC /* omghelp-splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "omghelp-splashscreen.png"; sourceTree = "<group>"; };
 		BECCFC4D15D7058500FF1FBC /* omghelp-splashscren@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "omghelp-splashscren@2x.png"; sourceTree = "<group>"; };
 		BECCFC5815D70AAC00FF1FBC /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		BECCFC1A15D7047700FF1FBC = {
 			isa = PBXGroup;
 			children = (
+				6D05E93415D7EFCA00001332 /* omghelp-splashscreen.png */,
 				BECCFC2F15D7047700FF1FBC /* omgHelp */,
 				BECCFC2815D7047700FF1FBC /* Frameworks */,
 				BECCFC2615D7047700FF1FBC /* Products */,
@@ -239,10 +242,10 @@
 		BECCFC4915D7052800FF1FBC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6D05E92F15D7EF2600001332 /* entry-screen@2x.png */,
 				BEB33CB915D7426900FF67A3 /* end-call.png */,
 				BECCFCA515D72A3200FF1FBC /* NavigationTitleLogo.png */,
 				BECCFC4A15D7058500FF1FBC /* omghelp-icon.png */,
-				BECCFC4B15D7058500FF1FBC /* omghelp-icon@2x.png */,
 				BECCFC4C15D7058500FF1FBC /* omghelp-splashscreen.png */,
 				BECCFC4D15D7058500FF1FBC /* omghelp-splashscren@2x.png */,
 			);
@@ -382,7 +385,6 @@
 			files = (
 				BECCFC3415D7047700FF1FBC /* InfoPlist.strings in Resources */,
 				BECCFC4E15D7058500FF1FBC /* omghelp-icon.png in Resources */,
-				BECCFC4F15D7058500FF1FBC /* omghelp-icon@2x.png in Resources */,
 				BECCFC5015D7058500FF1FBC /* omghelp-splashscreen.png in Resources */,
 				BECCFC5115D7058500FF1FBC /* omghelp-splashscren@2x.png in Resources */,
 				BECCFC9015D70D3C00FF1FBC /* HomeViewController.xib in Resources */,
@@ -393,6 +395,8 @@
 				BEB33CB815D738A600FF67A3 /* CallViewController.xib in Resources */,
 				BEB33CBA15D7426900FF67A3 /* end-call.png in Resources */,
 				BE3C500015D75E9A001426F4 /* opentok.bundle in Resources */,
+				6D05E93115D7EF2600001332 /* entry-screen@2x.png in Resources */,
+				6D05E93515D7EFCA00001332 /* omghelp-splashscreen.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
