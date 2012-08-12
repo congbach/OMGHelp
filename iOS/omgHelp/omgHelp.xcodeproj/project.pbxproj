@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE3C4FFD15D75E87001426F4 /* Opentok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C4FFC15D75E86001426F4 /* Opentok.framework */; };
+		BE3C500015D75E9A001426F4 /* opentok.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE3C4FFF15D75E9A001426F4 /* opentok.bundle */; };
+		BE3C503315D768E8001426F4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C503215D768E8001426F4 /* AudioToolbox.framework */; };
+		BE3C503515D768FE001426F4 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C503415D768FE001426F4 /* CoreTelephony.framework */; };
+		BE3C503715D7690E001426F4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C503615D7690D001426F4 /* AVFoundation.framework */; };
+		BE3C503915D76915001426F4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C503815D76915001426F4 /* CFNetwork.framework */; };
+		BE3C503B15D76920001426F4 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C503A15D76920001426F4 /* CoreAudio.framework */; };
+		BE3C503D15D7692A001426F4 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C503C15D7692A001426F4 /* CoreMedia.framework */; };
+		BE3C503F15D76930001426F4 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C503E15D76930001426F4 /* CoreVideo.framework */; };
+		BE3C504115D76940001426F4 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C504015D76940001426F4 /* libstdc++.dylib */; };
+		BE3C504315D76946001426F4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C504215D76946001426F4 /* libz.dylib */; };
+		BE3C504515D7694F001426F4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C504415D7694F001426F4 /* MobileCoreServices.framework */; };
+		BE3C504715D76956001426F4 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C504615D76956001426F4 /* OpenGLES.framework */; };
+		BE3C504915D7695E001426F4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C504815D7695D001426F4 /* QuartzCore.framework */; };
+		BE3C504B15D76963001426F4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C504A15D76963001426F4 /* Security.framework */; };
+		BE3C504D15D7696A001426F4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3C504C15D7696A001426F4 /* SystemConfiguration.framework */; };
+		BEB33CB415D7388D00FF67A3 /* CallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB33CB215D7388D00FF67A3 /* CallViewController.m */; };
+		BEB33CB815D738A600FF67A3 /* CallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEB33CB715D738A600FF67A3 /* CallViewController.xib */; };
+		BEB33CBA15D7426900FF67A3 /* end-call.png in Resources */ = {isa = PBXBuildFile; fileRef = BEB33CB915D7426900FF67A3 /* end-call.png */; };
 		BECCFC2A15D7047700FF1FBC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECCFC2915D7047700FF1FBC /* UIKit.framework */; };
 		BECCFC2C15D7047700FF1FBC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECCFC2B15D7047700FF1FBC /* Foundation.framework */; };
 		BECCFC2E15D7047700FF1FBC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECCFC2D15D7047700FF1FBC /* CoreGraphics.framework */; };
@@ -40,6 +59,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE3C4FFC15D75E86001426F4 /* Opentok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Opentok.framework; sourceTree = "<group>"; };
+		BE3C4FFF15D75E9A001426F4 /* opentok.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = opentok.bundle; sourceTree = "<group>"; };
+		BE3C503215D768E8001426F4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		BE3C503415D768FE001426F4 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		BE3C503615D7690D001426F4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BE3C503815D76915001426F4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		BE3C503A15D76920001426F4 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		BE3C503C15D7692A001426F4 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		BE3C503E15D76930001426F4 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		BE3C504015D76940001426F4 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		BE3C504215D76946001426F4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		BE3C504415D7694F001426F4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		BE3C504615D76956001426F4 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		BE3C504815D7695D001426F4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BE3C504A15D76963001426F4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BE3C504C15D7696A001426F4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BEB33CB115D7388D00FF67A3 /* CallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallViewController.h; sourceTree = "<group>"; };
+		BEB33CB215D7388D00FF67A3 /* CallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallViewController.m; sourceTree = "<group>"; };
+		BEB33CB715D738A600FF67A3 /* CallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CallViewController.xib; sourceTree = "<group>"; };
+		BEB33CB915D7426900FF67A3 /* end-call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "end-call.png"; sourceTree = "<group>"; };
 		BECCFC2515D7047700FF1FBC /* omgHelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = omgHelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECCFC2915D7047700FF1FBC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BECCFC2B15D7047700FF1FBC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -97,9 +136,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE3C504D15D7696A001426F4 /* SystemConfiguration.framework in Frameworks */,
+				BE3C504B15D76963001426F4 /* Security.framework in Frameworks */,
+				BE3C504915D7695E001426F4 /* QuartzCore.framework in Frameworks */,
+				BE3C504715D76956001426F4 /* OpenGLES.framework in Frameworks */,
+				BE3C504515D7694F001426F4 /* MobileCoreServices.framework in Frameworks */,
+				BE3C504315D76946001426F4 /* libz.dylib in Frameworks */,
+				BE3C504115D76940001426F4 /* libstdc++.dylib in Frameworks */,
+				BE3C503F15D76930001426F4 /* CoreVideo.framework in Frameworks */,
+				BE3C503D15D7692A001426F4 /* CoreMedia.framework in Frameworks */,
+				BE3C503B15D76920001426F4 /* CoreAudio.framework in Frameworks */,
+				BE3C503915D76915001426F4 /* CFNetwork.framework in Frameworks */,
+				BE3C503715D7690E001426F4 /* AVFoundation.framework in Frameworks */,
+				BE3C503515D768FE001426F4 /* CoreTelephony.framework in Frameworks */,
+				BE3C503315D768E8001426F4 /* AudioToolbox.framework in Frameworks */,
 				BECCFC2A15D7047700FF1FBC /* UIKit.framework in Frameworks */,
 				BECCFC2C15D7047700FF1FBC /* Foundation.framework in Frameworks */,
 				BECCFC2E15D7047700FF1FBC /* CoreGraphics.framework in Frameworks */,
+				BE3C4FFD15D75E87001426F4 /* Opentok.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +180,22 @@
 		BECCFC2815D7047700FF1FBC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE3C504C15D7696A001426F4 /* SystemConfiguration.framework */,
+				BE3C504A15D76963001426F4 /* Security.framework */,
+				BE3C504815D7695D001426F4 /* QuartzCore.framework */,
+				BE3C504615D76956001426F4 /* OpenGLES.framework */,
+				BE3C504415D7694F001426F4 /* MobileCoreServices.framework */,
+				BE3C504215D76946001426F4 /* libz.dylib */,
+				BE3C504015D76940001426F4 /* libstdc++.dylib */,
+				BE3C503E15D76930001426F4 /* CoreVideo.framework */,
+				BE3C503C15D7692A001426F4 /* CoreMedia.framework */,
+				BE3C503A15D76920001426F4 /* CoreAudio.framework */,
+				BE3C503815D76915001426F4 /* CFNetwork.framework */,
+				BE3C503615D7690D001426F4 /* AVFoundation.framework */,
+				BE3C503415D768FE001426F4 /* CoreTelephony.framework */,
+				BE3C503215D768E8001426F4 /* AudioToolbox.framework */,
+				BE3C4FFF15D75E9A001426F4 /* opentok.bundle */,
+				BE3C4FFC15D75E86001426F4 /* Opentok.framework */,
 				BECCFC2915D7047700FF1FBC /* UIKit.framework */,
 				BECCFC2B15D7047700FF1FBC /* Foundation.framework */,
 				BECCFC2D15D7047700FF1FBC /* CoreGraphics.framework */,
@@ -164,6 +234,7 @@
 		BECCFC4915D7052800FF1FBC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BEB33CB915D7426900FF67A3 /* end-call.png */,
 				BECCFCA515D72A3200FF1FBC /* NavigationTitleLogo.png */,
 				BECCFC4A15D7058500FF1FBC /* omghelp-icon.png */,
 				BECCFC4B15D7058500FF1FBC /* omghelp-icon@2x.png */,
@@ -235,6 +306,8 @@
 				BECCFC9F15D7268E00FF1FBC /* CategoriesViewController.m */,
 				BECCFC8815D70CF300FF1FBC /* HomeViewController.h */,
 				BECCFC8915D70CF300FF1FBC /* HomeViewController.m */,
+				BEB33CB115D7388D00FF67A3 /* CallViewController.h */,
+				BEB33CB215D7388D00FF67A3 /* CallViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -242,6 +315,7 @@
 		BECCFC8415D70B9200FF1FBC /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				BEB33CB715D738A600FF67A3 /* CallViewController.xib */,
 				BECCFCA315D726BA00FF1FBC /* CategoriesViewController.xib */,
 				BECCFC8D15D70D3C00FF1FBC /* HomeViewController.xib */,
 				BECCFC8E15D70D3C00FF1FBC /* ViewController_iPad.xib */,
@@ -311,6 +385,9 @@
 				BECCFC9215D70D3C00FF1FBC /* ViewController_iPhone.xib in Resources */,
 				BECCFCA415D726BA00FF1FBC /* CategoriesViewController.xib in Resources */,
 				BECCFCA615D72A3200FF1FBC /* NavigationTitleLogo.png in Resources */,
+				BEB33CB815D738A600FF67A3 /* CallViewController.xib in Resources */,
+				BEB33CBA15D7426900FF67A3 /* end-call.png in Resources */,
+				BE3C500015D75E9A001426F4 /* opentok.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +415,7 @@
 				BECCFC8B15D70CF300FF1FBC /* HomeViewController.m in Sources */,
 				BECCFC9915D7190600FF1FBC /* OMGDebugger.m in Sources */,
 				BECCFCA115D7268F00FF1FBC /* CategoriesViewController.m in Sources */,
+				BEB33CB415D7388D00FF67A3 /* CallViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +481,10 @@
 		BECCFC4715D7047700FF1FBC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "omgHelp/omgHelp-Prefix.pch";
 				INFOPLIST_FILE = "omgHelp/omgHelp-Info.plist";
@@ -416,6 +498,10 @@
 		BECCFC4815D7047700FF1FBC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "omgHelp/omgHelp-Prefix.pch";
 				INFOPLIST_FILE = "omgHelp/omgHelp-Info.plist";
@@ -445,6 +531,7 @@
 				BECCFC4815D7047700FF1FBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

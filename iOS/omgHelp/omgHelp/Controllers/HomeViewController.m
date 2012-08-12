@@ -34,12 +34,16 @@
     [super dealloc];
 }
 
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self.activityIndicator startAnimating];
+    [[NetworkManager sharedNetworkManager] requestCategoriesWithCallBackTarget:self selector:@selector(displayCategoriesFromJSON:)];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [self.activityIndicator startAnimating];
-    [[NetworkManager sharedNetworkManager] requestCategoriesWithCallBackTarget:self selector:@selector(displayCategoriesFromJSON:)];
 }
 
 - (void)viewDidUnload

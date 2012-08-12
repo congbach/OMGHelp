@@ -7,6 +7,7 @@
 //
 
 #import "CategoriesViewController.h"
+#import "CallViewController.h"
 #import "AppDelegate.h"
 
 @interface CategoriesViewController ()
@@ -95,7 +96,6 @@
 {
     id categoryJSON = [self.JSONCategoriesArray objectAtIndex:[indexPath indexAtPosition:1]];
     id subCategories = [categoryJSON valueForKeyPath:@"children"];
-    NSLog(@"%@", subCategories);
     
     if ([subCategories count])
     {
@@ -105,7 +105,10 @@
     }
     else
     {
-        
+        CallViewController *callViewController = [[[CallViewController alloc] initWithCategoryId:[[categoryJSON valueForKeyPath:@"Category.id"] intValue]] autorelease];
+        callViewController.navigationItem.hidesBackButton = YES;
+        callViewController.title = [categoryJSON valueForKeyPath:@"Category.name"];
+        [[[AppDelegate sharedAppDelegate] navigationController] pushViewController:callViewController animated:YES];
     }
 }
 

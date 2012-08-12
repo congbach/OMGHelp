@@ -40,13 +40,66 @@ static NetworkManager *_sharedNetworkManager;
 
 - (void)requestCategoriesWithCallBackTarget:(id)target selector:(SEL)selector
 {
-    NSURL *url = [NSURL URLWithString:@"http://www.omghelp.net/categories-sample.txt"];
+    NSString *stringUrl = [NSString stringWithFormat:@"http://omghelp.net/mobileapi/startup/%@/%@", self.clientId, self.vendorId, nil];
+    NSURL *url = [NSURL URLWithString:stringUrl];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
             if ([target respondsToSelector:selector])
                 [target performSelectorOnMainThread:selector withObject:JSON waitUntilDone:NO];
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"Failed");
+        NSLog(@"Error:%@", error);
+    }];
+    
+    [operation start];
+}
+
+
+- (void)startCallWithCategoryId:(int)categoryId callbackTarget:(id)target selector:(SEL)selector
+{
+    NSString *stringUrl = [NSString stringWithFormat:@"http://omghelp.net/mobileapi/startconversation/%@/%d", self.clientId, categoryId, nil];
+    NSURL *url = [NSURL URLWithString:stringUrl];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        if ([target respondsToSelector:selector])
+            [target performSelectorOnMainThread:selector withObject:JSON waitUntilDone:NO];
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"Failed");
+        NSLog(@"Error:%@", error);
+    }];
+    
+    [operation start];
+}
+
+
+- (void)pullCallInfoWithSessionId:(NSString *)sessionId callbackTarget:(id)target selector:(SEL)selector
+{
+    NSString *stringUrl = [NSString stringWithFormat:@"http://omghelp.net/mobileapi/getconversation/%@", sessionId, nil];
+    NSURL *url = [NSURL URLWithString:stringUrl];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        if ([target respondsToSelector:selector])
+            [target performSelectorOnMainThread:selector withObject:JSON waitUntilDone:NO];
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"Failed");
+        NSLog(@"Error:%@", error);
+    }];
+    
+    [operation start];
+}
+
+
+- (void)endCallWithSessionId:(NSString *)sessionId
+{
+    NSString *stringUrl = [NSString stringWithFormat:@"http://omghelp.net/mobileapi/closeconversation/%@", sessionId];
+    
+    NSURL *url = [NSURL URLWithString:stringUrl];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:nil failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         NSLog(@"Failed");
         NSLog(@"Error:%@", error);
     }];
