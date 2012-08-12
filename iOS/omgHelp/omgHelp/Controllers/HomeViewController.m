@@ -11,6 +11,8 @@
 #import "JSONKit.h"
 #import "AppDelegate.h"
 #import "CategoriesViewController.h"
+#import "CallViewController.h"
+#import "OMGDebugger.h"
 
 @interface HomeViewController ()
 
@@ -38,7 +40,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [self.activityIndicator startAnimating];
-    [[NetworkManager sharedNetworkManager] requestCategoriesWithCallBackTarget:self selector:@selector(displayCategoriesFromJSON:)];
+    [[NetworkManager sharedNetworkManager] requestInitializingInfoWithCallBackTarget:self selector:@selector(startWithJSON:)];
 }
 
 - (void)viewDidLoad
@@ -53,6 +55,16 @@
     // e.g. self.myOutlet = nil;
 }
 
+
+- (void)startWithJSON:(id)JSON
+{
+    if ([JSON valueForKeyPath:@"MenuCategories"])
+        [self displayCategoriesFromJSON:JSON];
+    else
+        [self resumeCallFromJSON:JSON];
+}
+
+
 - (void)displayCategoriesFromJSON:(id)JSON
 {
     [self.activityIndicator stopAnimating];
@@ -62,6 +74,14 @@
     [[[AppDelegate sharedAppDelegate] navigationController] pushViewController:categoriesViewController animated:NO];
     
 }
+
+
+- (void)resumeCallFromJSON:(id)JSON
+{
+    CallViewController *callViewController = [[[CallViewController alloc] initWithJSON:JSON] autorelease];
+    [[[AppDelegate sharedAppDelegate] navigationController] pushViewController:callViewController animated:YES];
+}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

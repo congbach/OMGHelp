@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE1A5FDD15D7DEE100F1BC0C /* NSData+Base64Decoding.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1A5FDC15D7DEE100F1BC0C /* NSData+Base64Decoding.m */; };
 		6D05E93115D7EF2600001332 /* entry-screen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D05E92F15D7EF2600001332 /* entry-screen@2x.png */; };
 		6D05E93715D7F0CD00001332 /* omghelp-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D05E93615D7F0CD00001332 /* omghelp-icon@2x.png */; };
 		6D05E93915D7F41000001332 /* omghelp-splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D05E93415D7EFCA00001332 /* omghelp-splashscreen.png */; };
@@ -59,6 +60,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE1A5FDB15D7DEE100F1BC0C /* NSData+Base64Decoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64Decoding.h"; sourceTree = "<group>"; };
+		BE1A5FDC15D7DEE100F1BC0C /* NSData+Base64Decoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64Decoding.m"; sourceTree = "<group>"; };
 		6D05E92F15D7EF2600001332 /* entry-screen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "entry-screen@2x.png"; sourceTree = "<group>"; };
 		6D05E93415D7EFCA00001332 /* omghelp-splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "omghelp-splashscreen.png"; sourceTree = "<group>"; };
 		6D05E93615D7F0CD00001332 /* omghelp-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "omghelp-icon@2x.png"; sourceTree = "<group>"; };
@@ -218,6 +221,8 @@
 				BECCFC5615D70A8300FF1FBC /* Libraries */,
 				BECCFC4915D7052800FF1FBC /* Resources */,
 				BECCFC3015D7047700FF1FBC /* Supporting Files */,
+				BE1A5FDB15D7DEE100F1BC0C /* NSData+Base64Decoding.h */,
+				BE1A5FDC15D7DEE100F1BC0C /* NSData+Base64Decoding.m */,
 			);
 			path = omgHelp;
 			sourceTree = "<group>";
@@ -416,6 +421,7 @@
 				BECCFC9915D7190600FF1FBC /* OMGDebugger.m in Sources */,
 				BECCFCA115D7268F00FF1FBC /* CategoriesViewController.m in Sources */,
 				BEB33CB415D7388D00FF67A3 /* CallViewController.m in Sources */,
+				BE1A5FDD15D7DEE100F1BC0C /* NSData+Base64Decoding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

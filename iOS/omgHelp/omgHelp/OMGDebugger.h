@@ -13,8 +13,8 @@
 
 @interface OMGDebugger : NSObject
 
-- (void)log:(NSString *)msg;
-- (void)logError:(NSString *)msg;
+- (void)log:(id)msg;
+- (void)logError:(id)msg;
 
 
 + (OMGDebugger *)sharedDebugger;

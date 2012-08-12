@@ -8,6 +8,7 @@
 
 #import "NetworkManager.h"
 #import "AFJSONRequestOperation.h"
+#import "OMGDebugger.h"
 
 @implementation NetworkManager
 
@@ -29,16 +30,26 @@ static NetworkManager *_sharedNetworkManager;
 {
     if (self = [super init])
     {
-        CFUUIDRef uuidObj = CFUUIDCreate(nil);
-        _clientId = (NSString*)CFUUIDCreateString(nil, uuidObj);
-        CFRelease(uuidObj);
+//        CFUUIDRef uuidObj = CFUUIDCreate(nil);
+//        _clientId = (NSString*)CFUUIDCreateString(nil, uuidObj);
+//        CFRelease(uuidObj);
+        self.clientId = [UIDevice currentDevice].uniqueIdentifier;
         self.vendorId = @"0";
     }
     return self;
 }
 
 
-- (void)requestCategoriesWithCallBackTarget:(id)target selector:(SEL)selector
+- (void)dealloc
+{
+    self.clientId = nil;
+    self.vendorId = nil;
+    
+    [super dealloc];
+}
+
+
+- (void)requestInitializingInfoWithCallBackTarget:(id)target selector:(SEL)selector
 {
     NSString *stringUrl = [NSString stringWithFormat:@"http://omghelp.net/mobileapi/startup/%@/%@", self.clientId, self.vendorId, nil];
     NSURL *url = [NSURL URLWithString:stringUrl];
@@ -48,8 +59,7 @@ static NetworkManager *_sharedNetworkManager;
             if ([target respondsToSelector:selector])
                 [target performSelectorOnMainThread:selector withObject:JSON waitUntilDone:NO];
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        NSLog(@"Failed");
-        NSLog(@"Error:%@", error);
+        [[OMGDebugger sharedDebugger] logError:error];
     }];
     
     [operation start];
@@ -66,8 +76,7 @@ static NetworkManager *_sharedNetworkManager;
         if ([target respondsToSelector:selector])
             [target performSelectorOnMainThread:selector withObject:JSON waitUntilDone:NO];
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        NSLog(@"Failed");
-        NSLog(@"Error:%@", error);
+        [[OMGDebugger sharedDebugger] logError:error];
     }];
     
     [operation start];
@@ -84,8 +93,7 @@ static NetworkManager *_sharedNetworkManager;
         if ([target respondsToSelector:selector])
             [target performSelectorOnMainThread:selector withObject:JSON waitUntilDone:NO];
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        NSLog(@"Failed");
-        NSLog(@"Error:%@", error);
+        [[OMGDebugger sharedDebugger] logError:error];
     }];
     
     [operation start];
@@ -100,11 +108,11 @@ static NetworkManager *_sharedNetworkManager;
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:nil failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        NSLog(@"Failed");
-        NSLog(@"Error:%@", error);
+        [[OMGDebugger sharedDebugger] logError:error];
     }];
     
     [operation start];
+    [operation waitUntilFinished];
 }
 
 @end

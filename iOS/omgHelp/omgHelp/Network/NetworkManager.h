@@ -14,7 +14,7 @@
 
 @property (retain, nonatomic) NSString *clientId, *vendorId;
 
-- (void)requestCategoriesWithCallBackTarget:(id)target selector:(SEL)selector;
+- (void)requestInitializingInfoWithCallBackTarget:(id)target selector:(SEL)selector;
 - (void)startCallWithCategoryId:(int)categoryId callbackTarget:(id)target selector:(SEL)selector;
 - (void)pullCallInfoWithSessionId:(NSString *)sessionId callbackTarget:(id)target selector:(SEL)selector;
 - (void)endCallWithSessionId:(NSString *)sessionId;

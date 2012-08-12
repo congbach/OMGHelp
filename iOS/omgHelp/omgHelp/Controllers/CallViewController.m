@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "NetworkManager.h"
 #import "OMGDebugger.h"
+#import <TargetConditionals.h>
 
 @interface CallViewController ()
 
@@ -17,19 +18,25 @@
 
 @implementation CallViewController
 
-static NSString *const kApiKey = @"1127";//@"17077042";
+static NSString *const kApiKey = @"17077042";
 
 @synthesize categoryId = _categoryId;
+@synthesize categoryName = _categoryName;
 @synthesize activityIndicator = _activityIndicator;
 @synthesize connectingLabel = _connectingLabel;
 @synthesize videoView = _videoView;
+@synthesize imageView = _imageView;
+@synthesize overlayImageView = _overlayImageView;
 @synthesize overlayView = _overlayView;
 @synthesize JSON = _JSON;
 @synthesize token = _token;
 @synthesize sessionId = _sessionId;
 @synthesize opentokSession = _opentokSession;
 @synthesize opentokPublisher = _opentokPublisher;
+@synthesize opentokSubscriber = _opentokSubscriber;
 @synthesize pullRequestTimer = _pullRequestTimer;
+@synthesize categoryLabel = _categoryLabel;
+@synthesize helperNameLabel = _helperNameLabel;
 
 #pragma mark - CallViewController
 
@@ -53,11 +60,22 @@ static NSString *const kApiKey = @"1127";//@"17077042";
 }
 
 
-- (id)initWithCategoryId:(int)categoryId
+- (id)initWithCategoryId:(int)categoryId categoryName:(NSString *)categoryName
 {
     if (self = [self init])
     {
         self.categoryId = categoryId;
+        self.categoryName = categoryName;
+    }
+    return self;
+}
+
+
+- (id)initWithJSON:(id)JSON
+{
+    if (self = [self init])
+    {
+        self.JSON = JSON;
     }
     return self;
 }
@@ -70,7 +88,9 @@ static NSString *const kApiKey = @"1127";//@"17077042";
     self.sessionId = nil;
     self.opentokSession = nil;
     self.opentokPublisher = nil;
+    self.opentokSubscriber = nil;
     self.pullRequestTimer = nil;
+    self.categoryName = nil;
     
     [super dealloc];
 }
@@ -84,8 +104,28 @@ static NSString *const kApiKey = @"1127";//@"17077042";
     // hack to get correct video ration
     [[UIDevice currentDevice] performSelector:NSSelectorFromString(@"setOrientation:") withObject:(id)UIInterfaceOrientationLandscapeRight];
     
+    CGRect frame = self.overlayView.frame;
+    CGFloat x = frame.origin.x + frame.size.width / 2;
+    CGFloat y = frame.origin.y + frame.size.height / 2;
+    CGAffineTransform transform = CGAffineTransformMakeTranslation(-x, -y);
+    transform = CGAffineTransformRotate(transform, -M_PI / 2);
+    transform = CGAffineTransformTranslate(transform, x, y);
+    self.overlayView.transform = transform;
+    frame = self.overlayView.frame;
+    frame.origin.y += 320;
+    self.overlayView.frame = frame;
+    
+    [self.categoryLabel setText:self.categoryName];
+    [self.helperNameLabel setText:@"Waiting for support…"];
     [self.activityIndicator startAnimating];
-    [[NetworkManager sharedNetworkManager] startCallWithCategoryId:self.categoryId callbackTarget:self selector:@selector(startCallWithJSON:)];
+    self.imageView.hidden = YES;
+    UITapGestureRecognizer *tapRecoginzer = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureCallback:)] autorelease];
+    [self.videoView addGestureRecognizer:tapRecoginzer];
+    
+    if (self.JSON)
+        [self startCallWithJSON:self.JSON];
+    else
+        [[NetworkManager sharedNetworkManager] startCallWithCategoryId:self.categoryId callbackTarget:self selector:@selector(startCallWithJSON:)];
 }
 
 
@@ -93,9 +133,6 @@ static NSString *const kApiKey = @"1127";//@"17077042";
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    UITapGestureRecognizer *tapRecoginzer = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureCallback:)] autorelease];
-    [self.videoView addGestureRecognizer:tapRecoginzer];
 }
 
 
@@ -112,9 +149,9 @@ static NSString *const kApiKey = @"1127";//@"17077042";
     return (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
-- (void)pullCallInfo
+- (void)pullCallInfo:(id)sender
 {
-    [[NetworkManager sharedNetworkManager] pullCallInfoWithSessionId:self.sessionId callbackTarget:self selector:@selector(updateCallWithJSON::)];
+    [[NetworkManager sharedNetworkManager] pullCallInfoWithSessionId:self.sessionId callbackTarget:self selector:@selector(updateCallWithJSON:)];
 }
 
 
@@ -124,8 +161,19 @@ static NSString *const kApiKey = @"1127";//@"17077042";
     
     self.token = [JSON valueForKeyPath:@"Conversation.Token"];
     self.sessionId = [JSON valueForKeyPath:@"Conversation.SessionId"];
+    [self.categoryLabel setText:[JSON valueForKeyPath:@"Conversation.CategoryName"]];
+    NSString *helperName = [JSON valueForKeyPath:@"Conversation.HelperName"];
+    if (helperName && (NSNull *)helperName != [NSNull null])
+        [self.helperNameLabel setText:helperName];
     
+    //self.overlayImageView.hidden = YES;
+    
+#if !(TARGET_IPHONE_SIMULATOR)
     [self doConnect];
+#else
+    self.pullRequestTimer = [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(pullCallInfo:) userInfo:nil repeats:YES];
+    [self.pullRequestTimer fire];
+#endif
 }
 
 
@@ -133,7 +181,61 @@ static NSString *const kApiKey = @"1127";//@"17077042";
 {
     self.JSON = JSON;
     
-    [[OMGDebugger sharedDebugger] log:[NSString stringWithFormat:@"%@", [JSON valueForKeyPath:@"Conversation.Image"]]];
+    NSString *helperName = [JSON valueForKeyPath:@"Conversation.HelperName"];
+    if (helperName && (NSNull *)helperName != [NSNull null])
+        [self.helperNameLabel setText:helperName];
+    
+    if ([[JSON valueForKeyPath:@"Conversation.Completed"] boolValue])
+    {
+        [self endCall:nil];
+        return;
+    }
+    
+    id imageJSON = [JSON valueForKeyPath:@"Conversation.Image"];
+    if ([[imageJSON valueForKeyPath:@"Enabled"] boolValue])
+    {
+        NSString *photoUrl = [imageJSON valueForKeyPath:@"Photo"];
+        if (photoUrl && (NSNull *)photoUrl != [NSNull null] && [photoUrl length])
+        {
+            
+            [self.activityIndicator startAnimating];
+            self.activityIndicator.hidden = NO;
+            
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:photoUrl] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
+            [request setHTTPShouldHandleCookies:NO];
+            [request setHTTPShouldUsePipelining:YES];
+            
+            [self.imageView setImageWithURLRequest:request
+                                  placeholderImage:nil
+                                           success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                               [self.activityIndicator stopAnimating];
+                                               self.activityIndicator.hidden = YES;
+            
+                                               self.imageView.hidden = NO;
+                                               self.opentokPublisher.view.hidden = YES;
+                                               
+                                               NSString *overlayData = [imageJSON valueForKeyPath:@"Overlay"];
+                                               if (overlayData && (NSNull *)overlayData != [NSNull null] && [overlayData length])
+                                               {
+                                                   [self.overlayImageView performSelectorOnMainThread:@selector(setImage:) withObject:[UIImage imageWithData:[NSData base64DataFromString:overlayData]] waitUntilDone:NO];
+                                               }
+                                           }
+                                           failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+                                               [[OMGDebugger sharedDebugger] logError:error];
+                                           }];
+        }
+        else
+        {
+            NSString *overlayData = [imageJSON valueForKeyPath:@"Overlay"];
+            if (overlayData && (NSNull *)overlayData != [NSNull null] && [overlayData length])
+                [self.overlayImageView performSelectorOnMainThread:@selector(setImage:) withObject:[UIImage imageWithData:[NSData base64DataFromString:overlayData]] waitUntilDone:NO];
+        }
+    }
+    else
+    {
+        self.imageView.hidden = YES;
+        self.opentokPublisher.view.hidden = NO;
+    }
 }
 
 
@@ -184,8 +286,11 @@ static NSString *const kApiKey = @"1127";//@"17077042";
     [self.videoView addSubview:_opentokPublisher.view];
     [_opentokPublisher.view setFrame:CGRectMake(0, 0, self.videoView.frame.size.width, self.videoView.frame.size.height)];
     [_opentokPublisher.view setUserInteractionEnabled:NO];
+    [self.activityIndicator stopAnimating];
+    self.activityIndicator.hidden = YES;
     
-    self.pullRequestTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(pullCallInfo) userInfo:nil repeats:YES];
+    self.pullRequestTimer = [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(pullCallInfo:) userInfo:nil repeats:YES];
+    [self.pullRequestTimer fire];
 }
 
 - (void)doUnpublish
@@ -232,12 +337,20 @@ static NSString *const kApiKey = @"1127";//@"17077042";
     NSLog(@"- name %@", stream.name);
     NSLog(@"- hasAudio %@", (stream.hasAudio ? @"YES" : @"NO"));
     NSLog(@"- hasVideo %@", (stream.hasVideo ? @"YES" : @"NO"));
+    
+    if (!_opentokSubscriber && ![stream.connection.connectionId isEqualToString: _opentokSession.connection.connectionId])
+    {
+        _opentokSubscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
+        _opentokSubscriber.subscribeToVideo = NO;
+        _opentokSubscriber.subscribeToAudio = YES;
+    }
 }
 
 - (void)session:(OTSession*)session didDropStream:(OTStream*)stream
 {
     NSLog(@"session didDropStream (%@)", stream.streamId);
 }
+
 
 #pragma mark - OTPublisherDelegate methods
 
@@ -258,6 +371,25 @@ static NSString *const kApiKey = @"1127";//@"17077042";
 -(void)publisherDidStopStreaming:(OTPublisher*)publisher
 {
     NSLog(@"publisherDidStopStreaming:%@", publisher);
+}
+
+
+#pragma mark - OTSubscriberDelegate methods
+
+- (void)subscriberDidConnectToStream:(OTSubscriber*)subscriber
+{
+    NSLog(@"subscriberDidConnectToStream (%@)", subscriber.stream.connection.connectionId);
+}
+
+- (void)subscriberVideoDataReceived:(OTSubscriber*)subscriber {
+    NSLog(@"subscriberVideoDataReceived (%@)", subscriber.stream.streamId);
+}
+
+- (void)subscriber:(OTSubscriber *)subscriber didFailWithError:(OTError *)error
+{
+    NSLog(@"subscriber: %@ didFailWithError: ", subscriber.stream.streamId);
+    NSLog(@"- code: %d", error.code);
+    NSLog(@"- description: %@", error.localizedDescription);
 }
 
 @end
