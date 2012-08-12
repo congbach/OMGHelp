@@ -57,7 +57,7 @@
 {
     [self.activityIndicator stopAnimating];
     CategoriesViewController *categoriesViewController = [[[CategoriesViewController alloc] initWithJSONCategoriesArray:[JSON valueForKeyPath:@"MenuCategories"]] autorelease];
-    categoriesViewController.title = @"omgHelp";
+    categoriesViewController.title = @"omgHELP";
     categoriesViewController.navigationItem.hidesBackButton = YES;
     [[[AppDelegate sharedAppDelegate] navigationController] pushViewController:categoriesViewController animated:NO];
     
