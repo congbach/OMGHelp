@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define BUILD_RELEASE   0
+#define BUILD_RELEASE   1
 #define BUILD_DEBUG     1
 
 @interface OMGDebugger : NSObject

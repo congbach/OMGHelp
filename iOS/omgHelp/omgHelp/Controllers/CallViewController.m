@@ -181,6 +181,9 @@ static NSString *const kApiKey = @"17077042";
 {
     self.JSON = JSON;
     
+    @synchronized(self)
+    {
+    
     NSString *helperName = [JSON valueForKeyPath:@"Conversation.HelperName"];
     if (helperName && (NSNull *)helperName != [NSNull null])
         [self.helperNameLabel setText:helperName];
@@ -236,6 +239,9 @@ static NSString *const kApiKey = @"17077042";
         self.imageView.hidden = YES;
         self.opentokPublisher.view.hidden = NO;
     }
+        
+        
+    }
 }
 
 
@@ -289,7 +295,7 @@ static NSString *const kApiKey = @"17077042";
     [self.activityIndicator stopAnimating];
     self.activityIndicator.hidden = YES;
     
-    self.pullRequestTimer = [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(pullCallInfo:) userInfo:nil repeats:YES];
+    self.pullRequestTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(pullCallInfo:) userInfo:nil repeats:YES];
     [self.pullRequestTimer fire];
 }
 
@@ -340,6 +346,7 @@ static NSString *const kApiKey = @"17077042";
     
     if (!_opentokSubscriber && ![stream.connection.connectionId isEqualToString: _opentokSession.connection.connectionId])
     {
+        [[OMGDebugger sharedDebugger] log:@"Received stream"];
         _opentokSubscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
         _opentokSubscriber.subscribeToVideo = NO;
         _opentokSubscriber.subscribeToAudio = YES;
