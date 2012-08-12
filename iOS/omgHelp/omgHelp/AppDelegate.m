@@ -36,6 +36,11 @@ static AppDelegate *_sharedAppDelegate = nil;
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:[[HomeViewController alloc] init]];
     [self.navigationController.navigationBar setHidden:YES];
     
+    self.instructionsShown = NO;
+  
+    UIImage *backgroundImage = [UIImage imageNamed:@"nav-bar-image-2"];
+    [self.navigationController.navigationBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+  
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;

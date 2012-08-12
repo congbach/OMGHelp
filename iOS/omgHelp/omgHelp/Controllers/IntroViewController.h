@@ -10,4 +10,6 @@
 
 @interface IntroViewController : UIViewController
 
+- (IBAction)dismissPage:(id)sender;
+
 @end
